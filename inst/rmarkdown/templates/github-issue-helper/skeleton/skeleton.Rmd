@@ -1,0 +1,36 @@
+---
+title: "Template Title"
+output: output_format
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Setup parameters
+
+```{r}
+issue <- 2
+Sys.setenv(param=issue)
+path <- glue::glue("issue_figures/{issue}.png", issue=issue)
+```
+
+## Plotting code
+```{r}
+plot(1)
+```
+
+```{r}
+commit_msg <- "Commit message"
+```
+
+
+## Push to github
+
+```{sh}
+git add -A && git commit -m "Issue #$param" && git push
+```
+
+```{r}
+gh_response(issue, commit_msg)
+```

@@ -1,0 +1,4 @@
+name: github issue helper
+description: >
+   Commit to an issue
+create_dir: FALSE
